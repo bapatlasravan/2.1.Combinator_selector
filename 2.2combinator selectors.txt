@@ -1,0 +1,117 @@
+<html>
+<head><title>combinator selector</title>
+<style type="text/css">
+ h2{
+ color:#6A0DAD;
+}
+ #one{
+    background-color:lightcyan;
+}
+ .one{
+    color:red;
+}
+div .one {
+  color:magenta;
+}
+div > .two {
+  color:magenta;
+}
+div + .three {
+  color:magenta;
+}
+div ~ .four {
+ color:magenta;
+}
+</style>
+
+</head>
+<body>
+      <center><h1 class="one two"><u>Combinator selector</u></h1></center>
+      <h3>A combinator is something that explains the relationship between the selectors.
+      A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator,
+      There are four different combinators in CSS:</h3>
+       <li>Descendant selector (space)</li>
+       <li>Child selector (>)</li>
+       <li>Adjacent sibling selector (+)</li>
+       <li>General sibling selector (~)</li>
+       
+       <h2><u>Descendant selector (space):</u></h2>
+       <p >The descendant selector matches all elements that are descendants of a specified element.</p>
+       <h3>Example:</h3>
+       
+
+                   <div>
+                  &ltdiv&gt
+                 <p class="one">Paragraph 1 in the div.</p>
+                 <p class="one">Paragraph 2 in the div.</p>
+                 <section><p class="one">Paragraph 3 in the div.</p></section>
+                 </div>
+                  &ltdiv&gt
+                 <p class="one">Paragraph 4. Not in a div.</p>
+                 <p class="one">Paragraph 5. Not in a div.</p>
+        <p id="one">Here the we can see that,the p tags that are only inside the div tag have changed there color into magenta color</p>
+
+       <h2><u>Child selector (>):</u></h2>
+       <p>The child selector (>) selects all elements that are the children of a specified element.</p>
+       <h3>Example:</h3>
+
+                   <div> &ltdiv&gt
+                      <p class="two">Paragraph 1 in the div.</p>
+                      <p class="two">Paragraph 2 in the div.</p>
+                      <section>
+                    
+                     <p class="two">Paragraph 3 in the div (inside a section element).</p>
+                     </section>
+                    <p class="two">Paragraph 4 in the div.</p>
+                    </div>
+
+                    <p class="two">Paragraph 5. Not in a div.</p>
+                   <p class="two">Paragraph 6. Not in a div.</p>
+        <p id="one">Here the paragraph 3 doesn't change it's color to magenta because it was in the child of selection tag,here all the child of div are changed into magenta</p>
+    
+  
+
+       <h2><u>Adjacent Sibling Selector (+):</u></h2>
+       <p>The adjacent sibling selector is used to select an element that is directly after another specific element.
+          Sibling elements must have the same parent element, and "adjacent" means "immediately following"</p>
+       <h3>Example:</h3>
+        <div> &ltdiv&gt
+          <p class="three">Paragraph 1 in the div.</p>
+          <p class="three">Paragraph 2 in the div.</p>
+        </div> &lt/div&gt
+
+          <p class="three">Paragraph 3. After a div.</p>
+          <p class="three">Paragraph 4. After a div.</p>
+
+        <div> &ltdiv&gt
+          <p class="three">Paragraph 5 in the div.</p>
+          <p class="three">Paragraph 6 in the div.</p>
+        </div> &lt/div&gt
+
+          <p class="three">Paragraph 7. After a div.</p>
+          <p class="three">Paragraph 8. After a div.</p>
+
+        <p id="one">Here we can see that paragraphs tag that are after the div tags color has changed to magenta.In the ajacent only nextone tag to the div tag color was changed </p>
+
+       <h2><u>General Sibling Selector (~):</u></h2>
+       <p>The general sibling selector selects all elements that are next siblings of a specified element.</p>
+       <h3>Example:</h3>
+
+                <p class="four">Paragraph 1.</p>
+
+          <div>   &ltdiv&gt
+                <p class="four">Paragraph 2.</p>
+          </div>  &lt/div&gt
+
+                 <p class="four">Paragraph 3.</p>
+                 <code>Some code.</code>
+                 <p class="four">Paragraph 4.</p>
+                
+       <p id="one">Here  all p tags after /div tag color changed to magenta </p>
+
+
+
+    
+  
+</body>
+</html>
